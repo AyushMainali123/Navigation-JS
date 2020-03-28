@@ -1,0 +1,90 @@
+*, *::before, *::after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.lines{
+    background-color: rgb(15, 73, 20);
+    display: grid;
+    justify-content: end;
+    align-items: center;
+    border-bottom: 8px solid tomato;
+    height: 16vh;
+}
+.container{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    height: 45px;
+    width: 50px;
+    border: 5px solid white;
+    margin: 1rem;
+    cursor: pointer;
+    position: relative;
+    padding: 5px;
+}
+.line1,.line2,.line3{
+    width: 30px;
+    background-color: white;
+    height: 5px;
+    transition: 1000ms;
+}
+.menu-open .line2{
+    display: none;
+}
+.menu-open .line1,
+.menu-open .line3{
+    position: absolute;
+    top: 45%;
+    left: 10%;
+    transition:  1000ms;
+}
+.menu-open .line1{
+    transform: rotateZ(45deg);
+}
+.menu-open .line3{
+    transform: rotateZ(-45deg);
+}
+
+/* Nav Styling */
+
+nav{
+    height: 0vh;
+    overflow: hidden;
+    transition: 1000ms;
+}
+
+nav.menu-open{
+    background-color: gray;
+    height: 40vh;
+    transition: 1000ms;    
+}
+nav ul{
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+}
+nav ul li{
+    padding: 1rem 2rem;
+    cursor: pointer;
+    border-bottom: 1px solid rgb(15, 73, 20);
+    transition: ease-in-out 500ms all;
+    height: 10vh;
+}
+nav ul li:hover{
+    padding:  1rem 3.5rem;
+}
+nav ul li a{
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: white;
+}
+main{
+    height: calc(100vh - 16vh);
+    background: url(./images/notebook.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: 1000ms;
+}
